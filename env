@@ -1,0 +1,37 @@
+# Database
+DATABASE_URL=postgresql://ecommerce_user:ecommerce_pass@db:5432/ecommerce_db
+
+# Redis
+REDIS_URL=redis://redis:6379/0
+
+# Security
+SECRET_KEY=super-secret-key-change-this-in-production-min-32-characters-long
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# Email
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+EMAILS_FROM_EMAIL=noreply@yourshop.ru
+EMAILS_FROM_NAME=Ваш Магазин
+
+# Payment (ЮKassa)
+YUKASSA_SHOP_ID=your_shop_id
+YUKASSA_SECRET_KEY=your_secret_key
+
+# Stripe (optional)
+STRIPE_SECRET_KEY=sk_test_changeme
+STRIPE_PUBLISHABLE_KEY=pk_test_changeme
+
+# Frontend URL
+FRONTEND_URL=http://localhost:3000
+
+# Admin
+FIRST_SUPERUSER_EMAIL=admin@example.com
+FIRST_SUPERUSER_PASSWORD=changethis123
+
+# File Upload
+MAX_FILE_SIZE=5242880
+UPLOAD_DIR=/app/uploads
