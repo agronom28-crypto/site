@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Shop | Интернет-магазин</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #333; }
+
+    /* Header */
+    header { background: #1a1a2e; color: white; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    header .logo { font-size: 1.5rem; font-weight: bold; color: #4fc3f7; text-decoration: none; }
+    header nav a { color: #ccc; text-decoration: none; margin-left: 24px; font-size: 0.95rem; transition: color 0.2s; }
+    header nav a:hover { color: white; }
+    .cart-btn { background: #4fc3f7; color: #1a1a2e; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 80px 40px; text-align: center; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 16px; }
+    .hero p { font-size: 1.2rem; color: #b0bec5; margin-bottom: 32px; }
+    .hero-btn { background: #4fc3f7; color: #1a1a2e; padding: 14px 36px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+    .hero-btn:hover { transform: scale(1.05); }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+    /* Section titles */
+    h2 { font-size: 1.8rem; margin-bottom: 24px; color: #1a1a2e; border-left: 4px solid #4fc3f7; padding-left: 12px; }
+
+    /* Categories */
+    .categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .category-card { background: white; border-radius: 12px; padding: 24px 12px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.2s; }
+    .category-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.15); transform: translateY(-3px); }
+    .category-card .icon { font-size: 2.2rem; margin-bottom: 8px; }
+    .category-card span { font-weight: 600; font-size: 0.95rem; }
+
+    /* Products */
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; margin-bottom: 48px; }
+    .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.2s; }
+    .product-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.15); transform: translateY(-3px); }
+    .product-img { width: 100%; height: 200px; background: #e8f4fd; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .product-info { padding: 16px; }
+    .product-info h3 { font-size: 1rem; margin-bottom: 8px; color: #1a1a2e; }
+    .product-info .price { font-size: 1.2rem; font-weight: bold; color: #0f3460; margin-bottom: 12px; }
+    .product-info .old-price { text-decoration: line-through; color: #999; font-size: 0.9rem; margin-right: 8px; }
+    .add-btn { width: 100%; background: #4fc3f7; color: #1a1a2e; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+    .add-btn:hover { background: #29b6f6; }
+
+    /* Features */
+    .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; margin-bottom: 48px; }
+    .feature { background: white; border-radius: 12px; padding: 28px 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .feature .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .feature h3 { font-size: 1rem; font-weight: bold; margin-bottom: 8px; color: #1a1a2e; }
+    .feature p { font-size: 0.9rem; color: #666; }
+
+    /* Footer */
+    footer { background: #1a1a2e; color: #b0bec5; text-align: center; padding: 32px 20px; margin-top: 40px; }
+    footer a { color: #4fc3f7; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">🛒 E-commerce Shop</a>
+  <nav>
+    <a href="#">Каталог</a>
+    <a href="#">О нас</a>
+    <a href="#">Контакты</a>
+  </nav>
+  <button class="cart-btn">🛒 Корзина</button>
+</header>
+
+<section class="hero">
+  <h1>Добро пожаловать в наш магазин</h1>
+  <p>Широкий ассортимент качественных товаров по лучшим ценам</p>
+  <a href="#catalog" class="hero-btn">Перейти в каталог</a>
+</section>
+
+<div class="container">
+
+  <section id="catalog">
+    <h2>Категории</h2>
+    <div class="categories">
+      <a href="#" class="category-card"><div class="icon">📱</div><span>Электроника</span></a>
+      <a href="#" class="category-card"><div class="icon">👗</div><span>Одежда</span></a>
+      <a href="#" class="category-card"><div class="icon">🏠</div><span>Дом и сад</span></a>
+      <a href="#" class="category-card"><div class="icon">⚽</div><span>Спорт</span></a>
+      <a href="#" class="category-card"><div class="icon">🎮</div><span>Игры</span></a>
+      <a href="#" class="category-card"><div class="icon">📚</div><span>Книги</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Популярные товары</h2>
+    <div class="products">
+      <div class="product-card">
+        <div class="product-img">📱</div>
+        <div class="product-info">
+          <h3>Смартфон Pro Max</h3>
+          <div><span class="old-price">12 990 ₽</span><span class="price">9 990 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">💻</div>
+        <div class="product-info">
+          <h3>Ноутбук UltraBook</h3>
+          <div><span class="price">54 990 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">🎧</div>
+        <div class="product-info">
+          <h3>Наушники Wireless</h3>
+          <div><span class="old-price">4 500 ₽</span><span class="price">2 990 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">⌚</div>
+        <div class="product-info">
+          <h3>Смарт-часы Sport</h3>
+          <div><span class="price">7 490 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">📷</div>
+        <div class="product-info">
+          <h3>Фотоаппарат Mirrorless</h3>
+          <div><span class="old-price">89 000 ₽</span><span class="price">74 990 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">🎮</div>
+        <div class="product-info">
+          <h3>Игровая консоль</h3>
+          <div><span class="price">34 990 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">🖥️</div>
+        <div class="product-info">
+          <h3>Монитор 4K 27"</h3>
+          <div><span class="old-price">32 000 ₽</span><span class="price">27 490 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">🔊</div>
+        <div class="product-info">
+          <h3>Колонка Bluetooth</h3>
+          <div><span class="price">3 290 ₽</span></div>
+          <button class="add-btn">В корзину</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Почему выбирают нас</h2>
+    <div class="features">
+      <div class="feature"><div class="icon">🚚</div><h3>Быстрая доставка</h3><p>Доставка по всей России от 1 до 3 дней</p></div>
+      <div class="feature"><div class="icon">🔒</div><h3>Безопасная оплата</h3><p>Все транзакции защищены SSL-шифрованием</p></div>
+      <div class="feature"><div class="icon">↩️</div><h3>Лёгкий возврат</h3><p>Возврат товара в течение 14 дней без вопросов</p></div>
+      <div class="feature"><div class="icon">💬</div><h3>Поддержка 24/7</h3><p>Наша команда всегда готова вам помочь</p></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 E-commerce Shop. Все права защищены. | <a href="https://github.com/agronom28-crypto/site">GitHub</a></p>
+</footer>
+
+</body>
+</html>
